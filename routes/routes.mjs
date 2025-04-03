@@ -1,15 +1,24 @@
-//necesita exxpress
 import express from 'express';
+import { welcome , obtenerUsuarios} from '../control/control.mjs';
+import {  obtenerIMC, enviarIMCDieta } from '../control/controlIMC.mjs';
+import { recomendarDieta } from '../control/controlDieta.mjs';
 
-//exportar el router de express para manejar rutas como get put y demas
 const router = express.Router();
 
-//importar los metodos a trabajara del controlador
-import {welcome} from '../control/control.mjs';
-
-export default router;
-//llamar al rouer, darle una direccion y el metodo a usar
-//en este caso el get
+// Ruta principal
 router.get('/', welcome);
 
+// Ruta para obtener todos los usuarios
+router.get("/us", obtenerUsuarios);
 
+// Ruta para obtener el IMC de un usuario por ID
+router.get("/imc/:id", obtenerIMC);
+
+// Ruta para enviar el IMC al controlador de dieta
+router.get("/envimc/:id", enviarIMCDieta);
+
+// Ruta en la que el controlador de dieta recibe el IMC
+router.post("/dieta", recomendarDieta);
+
+
+export default router;

@@ -1,7 +1,7 @@
 {
   "name": "ParcialIMC",
   "version": "1.0.0",
-   "type": "module",
+  "type": "module",
   "main": "main/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "Ejemplo de una librería práctica con Express y Sequelize, Practica para el Parcial",
   "dependencies": {
+    "axios": "^1.8.4",
     "express": "^5.1.0",
     "sequelize": "^6.37.7",
     "sqlite3": "^5.1.7"
